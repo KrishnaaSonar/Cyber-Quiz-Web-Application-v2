@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>Leaderboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<button class="learn-btn" onclick="askToLearn()">❓</button>
+
+<div class="leaderboard">
+  <h2>Leaderboard</h2>
+  <div id="tabs"></div>
+  <ul id="participants"></ul>
+
+  <button onclick="resetLeaderboard()">Reset Leaderboard</button>
+  <button onclick="location.href='admin.html'">Back</button>
+</div>
+
+<script src="js/admin-auth.js"></script>
+<script type="module" src="js/admin-participants.js"></script>
+<script>
+checkAdminAuth();
+function askToLearn() {
+  const choice = confirm("Want to learn more about Cyber Security?");
+  if (choice) window.location.href = "learn.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>Result</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<button class="learn-btn" onclick="askToLearn()">❓</button>
+
+<div class="container">
+  <h2>Quiz Completed</h2>
+  <h3 id="score"></h3>
+  <p id="timeTaken"></p>
+  <p id="message"></p>
+  <button onclick="location.href='index.html'">Restart</button>
+  <div class="footer-text">
+    © 2026 KKW SY CYBER-5549
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script type="module" src="js/result.js"></script>
+<script>
+function askToLearn() {
+  const choice = confirm("Want to learn more about Cyber Security?");
+  if (choice) window.location.href = "learn.html";
+}
+</script>
+</body>
+</html>

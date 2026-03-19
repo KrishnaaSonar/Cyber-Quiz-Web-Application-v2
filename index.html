@@ -1,0 +1,88 @@
+<html>
+<head>
+  <title>Cyber Quiz</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+  <h2>Cyber Security Quiz</h2>
+  <p class="subtitle">🎯 Learn. Play. Stay Secure!!</p>
+
+  <input
+    id="username"
+    placeholder="Enter full name"
+    maxlength="30"
+    autocomplete="off"
+  />
+
+  <select id="category">
+    <option value="">Select Category</option>
+    <option value="networking">Networking</option>
+    <option value="cyberlaws">Cyber Law</option>
+  </select>
+
+  <button onclick="startQuiz()">Start Quiz</button>
+  <p id="error" class="error"></p>
+
+  <p class="admin-link" onclick="location.href='admin-login.html'"> Admin Login </p>
+
+  <div class="footer-text">
+    © 2026 KKW SY CYBER-5549
+  </div>
+</div>
+
+<script>
+function sanitizeName(name) {
+  // Allow only letters, spaces, and dots
+  const pattern = /^[A-Za-z.\s]+$/;
+  return pattern.test(name);
+}
+
+function startQuiz() {
+  const nameInput = document.getElementById("username");
+  const categorySelect = document.getElementById("category");
+  const errorEl = document.getElementById("error");
+
+  const name = nameInput.value.trim();
+  const category = categorySelect.value;
+
+  errorEl.innerText = "";
+
+  // Empty check
+  if (name.length === 0) {
+    errorEl.innerText = "Name cannot be empty";
+    return;
+  }
+
+  // Length check
+  if (name.length < 2 || name.length > 30) {
+    errorEl.innerText = "Name must be between 2 and 30 characters";
+    return;
+  }
+
+  // Pattern (XSS-safe allowlist)
+  if (!sanitizeName(name)) {
+    errorEl.innerText =
+      "Name can contain only letters, spaces, and dots";
+    return;
+  }
+
+  // Category check
+  if (!category) {
+    errorEl.innerText = "Please select a category";
+    return;
+  }
+
+  // Safe to store and proceed
+  localStorage.setItem("currentUser", name);
+  localStorage.setItem("selectedCategory", category);
+
+  window.location.href = "quiz.html";
+}
+</script>
+
+</body>
+</html>
