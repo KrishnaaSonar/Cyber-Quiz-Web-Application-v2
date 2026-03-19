@@ -4,7 +4,6 @@ Built using **HTML, CSS, and JavaScript** with **Firebase Firestore** as the clo
 
 ## 🎯 Features
 - Multiple-choice questions on Networking and Cyber Law categories
-- Questions appear in randomized order every attempt
 - Instant answer feedback — correct answer highlights green, wrong highlights red
 - Score and time tracking with personalized performance message
 - Real-time shared leaderboard powered by Firebase Firestore
