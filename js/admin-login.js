@@ -3,7 +3,7 @@ function login() {
   const password = document.getElementById("adminPass").value;
   const errorEl  = document.getElementById("error");
 
-  if (username === "admin" && password === "admin69") {
+  if (username === "admin" && password === "Cyber@quiz789") {
     const token = "cyber-quiz-admin-" + new Date().toDateString();
     sessionStorage.setItem("adminToken", token);
     sessionStorage.setItem("adminTokenRef", token);
