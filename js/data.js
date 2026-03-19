@@ -230,7 +230,7 @@ const questions = {
         options:["Crime","Hacking","Privacy violation","Cyber terrorism"], 
         answer:1, 
     },
-    { question:"Publishing obscene content online is punishable under:", 
+    /*{ question:"Publishing obscene content online is punishable under:", 
         options:["Section 65","Section 66","Section 67","Section 70"], 
         answer:2, 
     },
@@ -246,10 +246,10 @@ const questions = {
         options:["Using VPN","Strong passwords","Using someones personal info illegally","Email encryption"], 
         answer:2, 
     },
-    /*{ question:"Online fraud can include:", 
+    { question:"Online fraud can include:", 
         options:["Software update","Fake job offers","Browsing websites","Online Gaming"], 
         answer:1, 
-    },*/
+    },
 
     // Medium 
     { question:"Section 43A of IT Act deals with:", 
@@ -305,14 +305,14 @@ const questions = {
         options:["Cyber bullying","Cyber espionage","Malware attack","Phishing"], 
         answer:0, 
     },
-    /*{ question:"Copyright protection applies to:", 
+    { question:"Copyright protection applies to:", 
         options:["Email addresses","Software code","Bank passwords","Firewalls"], 
         answer:1, 
     },
     { question:"Cyber law punishments may include:", 
         options:["Website blocking","Only warnings","Fine","Fines and imprisonment"], 
         answer:3, 
-    },*/
+    },
 
     // Hard 
     { question:"Section 66E of IT Act covers:", 
@@ -368,7 +368,7 @@ const questions = {
         options:["Email spam","Firewall rules","VPN servers","Sensitive personal data"], 
         answer:3, 
     },
-    /*{ question:"Cyber law also regulates:", 
+    { question:"Cyber law also regulates:", 
         options:["Digital contracts and e-commerce","Internet speed","Hardware connections","Antivirus updates"], 
         answer:0, 
     },
