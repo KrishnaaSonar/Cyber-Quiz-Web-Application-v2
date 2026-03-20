@@ -55,38 +55,37 @@ function nextQuestion() {
     alert("Select an option");
     return;
   }
-
-  // First click — show feedback
-  if (!feedbackShown) {
-    showFeedback();
-    return;
-  }
-
-  // Second click — move to next question
-  index++;
-  if (index < quizQuestions.length) {
-    loadQuestion();
-  } else {
-    localStorage.setItem("answers", JSON.stringify(answers));
-    location.href = "result.html";
-  }
+  showFeedback();
 }
 
 function showFeedback() {
   feedbackShown = true;
-  nextBtn.innerText = "Continue";
+  nextBtn.disabled = true;
+  nextBtn.innerText = "Next";
 
   const correctIndex = quizQuestions[index].answer;
   const items = document.querySelectorAll("li");
 
   items.forEach((li, i) => {
-    li.onclick = null; // disable clicking during feedback
+    li.onclick = null;
     if (i === correctIndex) {
       li.classList.add("correct");
     } else if (i === answers[index] && i !== correctIndex) {
       li.classList.add("wrong");
     }
   });
+
+  // Auto advance after 1.5 seconds
+  setTimeout(() => {
+    nextBtn.disabled = false;
+    index++;
+    if (index < quizQuestions.length) {
+      loadQuestion();
+    } else {
+      localStorage.setItem("answers", JSON.stringify(answers));
+      location.href = "result.html";
+    }
+  }, 2000);
 }
 
 loadQuestion();
