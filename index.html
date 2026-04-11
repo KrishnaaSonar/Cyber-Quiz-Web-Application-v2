@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<button class="learn-btn" onclick="askToLearn()">❓</button>
+
 
 <div class="container">
   <h2>Cyber Security Quiz</h2>
@@ -39,6 +41,11 @@ function sanitizeName(name) {
   // Allow only letters, spaces, and dots
   const pattern = /^[A-Za-z.\s]+$/;
   return pattern.test(name);
+}
+
+function askToLearn() {
+  const choice = confirm("Want to learn more about Cyber Security?");
+  if (choice) window.location.href = "learn.html";
 }
 
 function startQuiz() {
